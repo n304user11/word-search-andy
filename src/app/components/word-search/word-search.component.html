@@ -1,0 +1,36 @@
+<div class="center">
+  <button (click)="searchWord()" class="btn third">Find</button>
+</div>
+<div class="center">
+  <table>
+    <tbody>
+      <tr>
+        <td></td>
+        <ng-container *ngIf="gridsList?.length > 0">
+          <td class="coordinate" *ngFor="let grid of gridsList[0]; let indexOfelement=index;">
+            {{ indexOfelement }}
+          </td>
+        </ng-container>
+
+      </tr>
+      <tr *ngFor="let grids of gridsList; let indexOfelement=index;">
+        <td class="coordinate">{{ indexOfelement }}</td>
+        <td *ngFor="let grid of grids">
+          {{ grid }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="center">
+  <ul>
+    <li *ngFor="let finding of findings" class="text-left">{{ finding }}</li>
+  </ul>
+</div>
+
+<div class="center">
+  <div class="bar info" *ngIf="message !== ''">
+    <i class="ico">&#8505;</i> {{ message }} &nbsp;
+  </div>
+</div>
+
